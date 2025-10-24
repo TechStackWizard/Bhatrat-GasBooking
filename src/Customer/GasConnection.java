@@ -6,7 +6,7 @@ import java.util.*;
 
 public class GasConnection extends Customer{
 	
-	int numbersOfCylinders;
+	public int numbersOfCylinders;
 	static int connectionNumber = 100;
 	String date;
 	
@@ -15,7 +15,7 @@ public class GasConnection extends Customer{
 	}
 	
 //	create a dateformat function
-	Date lastDate = null;
+	public Date lastDate = null;
 	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
 	
 	
@@ -26,6 +26,7 @@ public class GasConnection extends Customer{
 		this.numbersOfCylinders = numberOfCylinder;
 	}
 	
+	@SuppressWarnings("resource")
 	public void getLastDate() {
 		System.out.print("Enter Last Date : ");
 		date = new Scanner(System.in).nextLine();
