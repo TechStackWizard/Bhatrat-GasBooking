@@ -60,18 +60,28 @@ public class Booking extends GasConnection {
 		// get the difference between two dates
 		Long dtDiff = dt_1.getTime() - lastDate.getTime();
 		long diff = TimeUnit.DAYS.convert(dtDiff, TimeUnit. MILLISECONDS);
-		//print the diffe
+		//print the diffe 	
 		System.out.println("Difference between two dates is: " + diff);
-		if (numbersOfCylinders == 1) {
+		
+		if (numbersOfCylinders == 1) { //booking for single cylinder
 			if (diff <30) {
 				System.out.println("booking cannot be done");
-		// numberOfCylinders = 0;
-		status =  "C";
+				
+				// numberOfCylinders = 0;
+				status =  "C"; 
 		} else {
-		// System.out.println("status: booked");
-		status = "B"; //status booked
-		lastDate = dt_1;
-		}
+//		 	System.out.println("status: booked");
+			status = "B"; //status booked
+			lastDate = dt_1; //current booking date become last date for future
+			}
+		}else if(numbersOfCylinders == 2) {
+			if(diff < 50) {
+				System.out.println("booking cannot be done");
+				status = "C";
+			}else {
+				status = "B";
+				lastDate = dt_1;
+			}
 		}
 }
 }
