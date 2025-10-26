@@ -33,20 +33,23 @@ public class Main {
 		}
 	}
 	
-	public static void checkLateDel (Delivery [] obj) {
-		String[] months = new String[]{"January", "february", "March", "April", "May", "June",
+	public static void checkLateDel(Delivery [] obj) {
+		String[] months = {"January", "february", "March", "April", "May", "June",
 		"July", "August", "September", "October", "November", "December" };
 		int[] month = new int[12];
-		for (Delivery delivery: obj) {\
-		if(delivery.status.equals("D") && delivery.amount 783.75 ){
-		month [delivery.dt_2.getMonth()] += 1;
-		/* february, month array at index 1st = 1; */
+		
+		for (Delivery delivery: obj) {
+			if(delivery.status.equals("D") && delivery.amount == 783.75 ){
+				month [delivery.dt_2.getMonth()] += 1;
+				/* february, month array at index 1st = 1; */
+			}
 		}
 		System.out.println(". -late delivery- ");
-		for (int i=0; i<12; i++){
-		if(month[i] 0){
-		System.out.println("* In " + months [i] + "there are " + month[i]);
-		}
+		
+		for(int i=0; i<12; i++){
+			if(month[i] != 0){
+				System.out.println("* In " + months [i] + "there are " + month[i]);
+			}
 		}
 		System.out.println("\n");
 		}
